@@ -1,1 +1,10 @@
-<h1>Title for quiz 1</h1>
+<div class="booyah-box col-10 offset-1">
+  <% @infos.each do |info| %>
+    <div>
+      <h1><%= info.name %></h1><br />
+      <i><%= info.information %></i><br />
+    </div>
+
+    <hr />
+  <% end %>
+</div>
