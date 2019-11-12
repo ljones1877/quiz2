@@ -1,8 +1,9 @@
 <% @infos.each do |info| %>
   <div class="booyah-box col-10 offset-1">
     <div>
-      <h1><%= info.name %></h1><br />
-      <i><%= info.information %></i><br />
+      <h1><%= link_to info.name info_path(info) %></h1><br />
+      <i><%= info.name %></i><br />
+      <p><%= info.information %></p><br />
     </div>
     <hr />
   </div>
