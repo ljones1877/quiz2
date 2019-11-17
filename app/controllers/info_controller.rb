@@ -1,15 +1,15 @@
 class InfoController < ApplicationController
+ before_action :authenticate_user!
+
+  def new
+  end
+
   def index
     @infos = Info.all
   end
 
-  def new
-    @info = Info.new
-  end
-
-  def create
-    Info.create(info_params)
-    redirect_to root_path
+  def show
+    @infos = Info.find(params[:id])
   end
 
   private
@@ -18,7 +18,4 @@ class InfoController < ApplicationController
     params.require(:info).permit(:name, :information)
   end
 
-  def show
-    @info = Info.find
-  end
 end
