@@ -1,8 +1,8 @@
 <% @infos.each do |info| %>
   <div class="booyah-box col-10 offset-1">
-    <h1><%= info.name %></h1>
-    <i><%= info.information %></i><br /><br />
-    
+    <h1><%= link_to info.name, infos_path(info) %></h1><br />
+     <i><%= info.name %></i><br />
+    <p><%= info.information %></p><br />
 
     <% if info.user.present? %>
       <small><%= info.user.email %></small>
