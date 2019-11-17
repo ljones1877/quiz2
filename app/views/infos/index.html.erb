@@ -1,12 +1,11 @@
-<div class="hero">
-  <br />
-  <div class="frosty col-10 offset-1 text-center">
-    <br />
-    <h1>Quiz 1 Headline</h1>
-    <br />
-    <h2>Quiz 2 In Progress</h2>
-    <br />
-    <%= link_to 'Info', infos_path, class: 'btn btn-success' %>
-    <br /><br />
+<% @infos.each do |info| %>
+  <div class="booyah-box col-10 offset-1">
+    <h1><%= info.name %></h1>
+    <i><%= info.information %></i><br /><br />
+    
+
+    <% if info.user.present? %>
+      <small><%= info.user.email %></small>
+    <% end %>
   </div>
-</div>
+<% end %>

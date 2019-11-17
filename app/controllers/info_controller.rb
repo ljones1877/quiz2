@@ -1,11 +1,11 @@
 class InfoController < ApplicationController
- before_action :authenticate_user!
-
-  def new
-  end
-
   def index
     @infos = Info.all
+  end
+
+  def create
+    current_user.infos.create(info_params)
+    redirect_to root_path
   end
 
   def show
